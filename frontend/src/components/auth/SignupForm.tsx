@@ -34,47 +34,47 @@ export const SignupForm = () => {
 
   return (
     <AuthLayout
-      title="Create an account"
-      subtitle="Enter your details to get started"
+      title="Create account"
+      subtitle="Start your journey with ConvoBoost today"
       footerText="Already have an account?"
       footerLinkText="Sign in"
       footerLinkTo="/login"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         {error && (
-            <div className="p-3 text-sm text-red-600 bg-red-50 dark:bg-red-900/10 dark:text-red-400 rounded-lg border border-red-100 dark:border-red-900/20">
-                {error}
-            </div>
+          <div className="p-3 text-sm font-medium text-red-600 bg-red-50 dark:bg-red-900/20 dark:text-red-400 rounded-xl border border-red-100 dark:border-red-900/30">
+            {error}
+          </div>
         )}
 
         <div className="space-y-1.5">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-zinc-500 ml-1">
             Full Name
           </label>
           <div className="relative">
-            <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <User className="absolute left-4 top-3 h-5 w-5 text-gray-400" />
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all dark:bg-zinc-950 dark:text-white"
+              className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-zinc-950 border-none rounded-2xl focus:ring-2 focus:ring-black dark:focus:ring-white outline-none transition-all dark:text-white"
               placeholder="John Doe"
               required
             />
           </div>
         </div>
-        
+
         <div className="space-y-1.5">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-zinc-500 ml-1">
             Email
           </label>
           <div className="relative">
-            <Mail className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Mail className="absolute left-4 top-3 h-5 w-5 text-gray-400" />
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all dark:bg-zinc-950 dark:text-white"
+              className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-zinc-950 border-none rounded-2xl focus:ring-2 focus:ring-black dark:focus:ring-white outline-none transition-all dark:text-white"
               placeholder="you@example.com"
               required
             />
@@ -82,16 +82,16 @@ export const SignupForm = () => {
         </div>
 
         <div className="space-y-1.5">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-zinc-500 ml-1">
             Password
           </label>
           <div className="relative">
-            <Lock className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Lock className="absolute left-4 top-3 h-5 w-5 text-gray-400" />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-zinc-800 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all dark:bg-zinc-950 dark:text-white"
+              className="w-full pl-12 pr-4 py-3 bg-gray-50 dark:bg-zinc-950 border-none rounded-2xl focus:ring-2 focus:ring-black dark:focus:ring-white outline-none transition-all dark:text-white"
               placeholder="••••••••"
               required
               minLength={8}
@@ -102,10 +102,10 @@ export const SignupForm = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full flex items-center justify-center py-2.5 px-4 rounded-xl text-sm font-medium text-white bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center py-3.5 px-4 rounded-2xl text-sm font-bold text-white bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-all shadow-lg active:scale-[0.98] disabled:opacity-70"
         >
           {isLoading ? (
-            <Loader2 className="w-4 h-4 animate-spin" />
+            <Loader2 className="w-5 h-5 animate-spin" />
           ) : (
             'Create account'
           )}
