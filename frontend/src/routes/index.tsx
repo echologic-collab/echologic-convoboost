@@ -15,6 +15,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import Snowfall from 'react-snowfall'
 import logoUrl from '../assets/logo.png'
+import realTimeInsight from '../assets/realtimeinsight.png'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -68,36 +69,42 @@ function App() {
       title: 'Real-Time Conversation Insights',
       description:
         'Get actionable suggestions as conversations happen so teams can respond with confidence.',
+      backgroundImage: realTimeInsight,
     },
     {
       icon: <Headset className="h-6 w-6 text-sky-300" />,
       title: 'Customer Service Enhancement',
       description:
         'Resolve issues faster with AI-guided responses that help agents deliver consistent outcomes.',
+      backgroundImage: realTimeInsight,
     },
     {
       icon: <SearchCheck className="h-6 w-6 text-sky-300" />,
       title: 'Market Research Analysis',
       description:
         'Extract meaningful patterns from conversation data to improve strategy and decision-making.',
+      backgroundImage: realTimeInsight,
     },
     {
       icon: <BrainCircuit className="h-6 w-6 text-sky-300" />,
       title: 'Content Analysis',
       description:
         'Understand sentiment, tone, and key topics automatically with NLP-powered analysis.',
+      backgroundImage: realTimeInsight,
     },
     {
       icon: <Workflow className="h-6 w-6 text-sky-300" />,
       title: 'Multi-Domain Support',
       description:
         'Works across industries and conversation types from support desks to research interviews.',
+      backgroundImage: realTimeInsight,
     },
     {
       icon: <Sparkles className="h-6 w-6 text-sky-300" />,
       title: 'Smart Learning',
       description:
         'Continuously improves from interactions using advanced machine learning models.',
+      backgroundImage: realTimeInsight,
     },
   ]
   const testimonials = [
@@ -336,22 +343,32 @@ function App() {
         </div>
         <div ref={featuresReveal.ref} className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature, index) => (
-            <article
-              key={feature.title}
-              className={`group rounded-2xl border border-indigo-200/15 bg-slate-900/45 p-6 backdrop-blur-xl transition-all duration-700 hover:-translate-y-1.5 hover:border-sky-300/50 hover:bg-slate-900/70 hover:shadow-[0_0_30px_-16px_rgba(56,189,248,0.7)] ${
-                featuresReveal.isVisible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-8 opacity-0'
-              }`}
-              style={{ transitionDelay: `${180 + index * 100}ms` }}
-            >
-              <div className="mb-4 inline-flex rounded-xl border border-sky-300/30 bg-sky-400/10 p-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                {feature.icon}
-              </div>
-              <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
-              <p className="text-slate-300">{feature.description}</p>
-            </article>
-          ))}
+  <article
+    key={feature.title}
+    className={`group relative overflow-hidden rounded-2xl border border-indigo-200/15 bg-slate-900/45 p-6 backdrop-blur-xl transition-all duration-700 hover:-translate-y-1.5 hover:border-sky-300/50 hover:bg-slate-900/70 hover:shadow-[0_0_30px_-16px_rgba(56,189,248,0.7)] ${
+      featuresReveal.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+    }`}
+    style={{ transitionDelay: `${180 + index * 100}ms` }}
+  >
+    {/* --- WATERMARK IMAGE START --- */}
+    {feature.backgroundImage && (
+      <img
+        src={feature.backgroundImage}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.40] grayscale transition-opacity duration-500 group-hover:opacity-10 pointer-events-none"
+      />
+    )}
+    {/* --- WATERMARK IMAGE END --- */}
+
+    <div className="relative z-10"> {/* Added z-10 to keep text above image */}
+      <div className="mb-4 inline-flex rounded-xl border border-sky-300/30 bg-sky-400/10 p-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+        {feature.icon}
+      </div>
+      <h3 className="mb-2 text-xl font-bold">{feature.title}</h3>
+      <p className="text-slate-300 font-semibold">{feature.description}</p>
+    </div>
+  </article>
+))}
         </div>
       </section>
 
