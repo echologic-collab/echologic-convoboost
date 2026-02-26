@@ -16,6 +16,11 @@ import { useEffect, useRef, useState } from 'react'
 import Snowfall from 'react-snowfall'
 import logoUrl from '../assets/logo.png'
 import realTimeInsight from '../assets/realtimeinsight.png'
+import customersatisfaction from '../assets/customersatisfaction.png'
+import marketresearch from '../assets/marketresearch.png'
+import contentAnalysis from '../assets/contentAnalysis.png'
+import domainImg from '../assets/domain.png'
+import smartLearning from '../assets/smartLearning.png'
 
 export const Route = createFileRoute('/')({ component: App })
 
@@ -76,35 +81,35 @@ function App() {
       title: 'Customer Service Enhancement',
       description:
         'Resolve issues faster with AI-guided responses that help agents deliver consistent outcomes.',
-      backgroundImage: realTimeInsight,
+      backgroundImage: customersatisfaction,
     },
     {
       icon: <SearchCheck className="h-6 w-6 text-sky-300" />,
       title: 'Market Research Analysis',
       description:
         'Extract meaningful patterns from conversation data to improve strategy and decision-making.',
-      backgroundImage: realTimeInsight,
+      backgroundImage: marketresearch,
     },
     {
       icon: <BrainCircuit className="h-6 w-6 text-sky-300" />,
       title: 'Content Analysis',
       description:
         'Understand sentiment, tone, and key topics automatically with NLP-powered analysis.',
-      backgroundImage: realTimeInsight,
+      backgroundImage: contentAnalysis,
     },
     {
       icon: <Workflow className="h-6 w-6 text-sky-300" />,
       title: 'Multi-Domain Support',
       description:
         'Works across industries and conversation types from support desks to research interviews.',
-      backgroundImage: realTimeInsight,
+      backgroundImage: domainImg,
     },
     {
       icon: <Sparkles className="h-6 w-6 text-sky-300" />,
       title: 'Smart Learning',
       description:
         'Continuously improves from interactions using advanced machine learning models.',
-      backgroundImage: realTimeInsight,
+      backgroundImage: smartLearning,
     },
   ]
   const testimonials = [
